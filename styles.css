@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
+
+  overflow: hidden;
+  color: #b3003b;
+}
+
+
+.container {
+  position: relative;
+
+  width: min(90vw, 900px);
+  height: min(85vh, 700px);
+
+  background: rgba(255, 255, 255, 0.95);
+  padding: clamp(20px, 4vw, 50px);
+
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  z-index: 2;
+}
+
+.container h1 {
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+.container h2 {
+  font-size: clamp(20px, 3.5vw, 32px);
+}
+
+.subtitle {
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+.subtitle3 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+  color: #ffd6e8;
+  font-family: "Georgia", serif;
+  letter-spacing: 0.5px;
+}
+
+
+#proposalBox {
+  margin-top: 20px;
+  font-size: clamp(15px, 2.2vw, 18px);
+}
+
+
+.subtitle {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 14px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #ffb3c1;
+  color: white;
+}
+.funny-text {
+  min-height: 24px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #ff4d6d;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+#noBtn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#messageBox {
+  margin-top: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.gallery img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ff4d6d;
+}
+
+/* Floating hearts */
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 8s linear infinite;
+  color: rgba(255, 0, 76, 0.8);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.music-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Proposal animation */
+.proposal {
+  animation: popIn 1s ease forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.signature {
+  margin-top: 15px;
+  font-style: italic;
+  color: #ff4d6d;
+  font-size: 18px;
+}
+
+/* Confetti canvas */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.photo-column {
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 120vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.left-column {
+  left: calc(50% - 560px);
+}
+
+.right-column {
+  right: calc(50% - 560px);
+}
+
+.photo-track {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: scrollUp 22s linear infinite;
+}
+
+.photo-track.reverse {
+  animation: scrollDown 22s linear infinite;
+}
+
+.photo-track img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .photo-column {
+    display: none;
+  }
+}
+
+
+
+.photo-column img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain; /* KEY FIX: no zoom */
+  border-radius: 14px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Vertical scrolling animation */
+@keyframes verticalScroll {
+  0% {
+    transform: translateY(-50%) translateY(40px);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-40px);
+  }
+  100% {
+    transform: translateY(-50%) translateY(40px);
+  }
+}
+
+/* Typewriter text */
+#typewriter {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;   /* keep romantic look */
+  margin: 20px 0;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+
+/* Counter */
+.counter {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #b3003b;
+  font-weight: 500;
+}
+
+.reasons {
+  margin-top: 20px;
+}
+
+.reasons ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.reasons li {
+  opacity: 0;
+  font-size: 15px;
+  margin: 6px 0;
+  transition: opacity 0.6s ease;
+}
+
+.yay {
+  font-size: 48px;
+  color: #ff4d6d;
+  animation: pop 0.8s ease forwards;
+  margin-bottom: 10px;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.proposal-box {
+  animation: heartbeat 2.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.015); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+#heart-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.proposal-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 60px;   /* THIS is what visually fills space */
+  box-sizing: border-box;
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.9;
+  z-index: 9999;
+  animation: confetti-fall 2s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+#tapHint {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #ff6b81;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+
+  transform: translateX(-30px); /* 👈 move left */
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+
+
+
+
+
+
+

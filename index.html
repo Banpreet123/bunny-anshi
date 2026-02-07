@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bunny ❤️ Anshi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Floating Hearts -->
+<div class="hearts"></div>
+
+<!-- Confetti Canvas -->
+<canvas id="confetti"></canvas>
+
+<audio id="introMusic" loop>
+  <source src="intro.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="loveMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+
+<div class="container">
+  <h1>Anshi Srivastava ❤️</h1>
+  <h4 class="subtitle3">Starting from a message till FOREVER♾️❤️.</h4>
+
+  <div id="introText">
+    <p class="subtitle">
+        Hi my love,<br>
+        it's your Bunny here 🧸<br>
+        and I have something special to ask you…
+    </p>
+
+    <h2>Will you be my Valentine? 💘</h2>
+  </div>
+  
+
+  <p id="funnyText" class="funny-text"></p>
+  <div class="buttons">
+    <button id="yesBtn">YES 😍💖</button>
+    <button id="noBtn">No 🙃</button>
+  </div>
+  <div id="tapHint">Tap anywhere to begin our story 🎶❤️</div>
+
+  
+  
+
+  <!-- <h1 id="yayText" class="yay hidden">YAY!!! 💖🎉 She said YES 🥹💖</h1> -->
+
+  <!-- Proposal Section -->
+  <div id="proposalBox" class="hidden proposal">
+    <div id="yayText" class="yay hidden">YAY!!! 💖🎉 She said YES 🥹💖</div>
+    <!-- <h2>YAY!!! 💖🎉 She said YES 🥹💖</h2> -->
+    <div class="proposal-content">
+        <p id="typewriter"></p>
+
+        <div id="afterTypewriter" class="hidden">
+            <div class="counter">
+                <h4>⏳ Since we met:</h4>
+                 <span id="timeTogether"></span>
+                
+            </div>
+
+            <h3>
+                <br>Will you be mine,<br>
+                today, tomorrow, and always? ❤️
+            </h3>
+
+            <p class="signature">
+                Forever yours,<br>
+                Bunny 🐰🐰
+            </p>
+        </div>
+    </div>
+
+
+<!-- Left Infinite Column -->
+<div class="photo-column left-column">
+  <div class="photo-track">
+    <img src="img1.jpeg">
+    <img src="img2.jpeg">
+    <img src="img3.jpeg">
+    <img src="img4.jpeg">
+    <img src="img5.jpeg">
+
+    <!-- duplicate for infinite scroll -->
+    <img src="img1.jpeg">
+    <img src="img2.jpeg">
+    <img src="img3.jpeg">
+    <img src="img4.jpeg">
+    <img src="img5.jpeg">
+  </div>
+</div>
+
+<!-- Right Infinite Column -->
+<div class="photo-column right-column">
+  <div class="photo-track reverse">
+    <img src="img6.jpeg">
+    <img src="img7.jpeg">
+    <img src="img8.jpeg">
+    <img src="img9.jpeg">
+    <img src="img10.jpeg">
+
+    <!-- duplicate -->
+    <img src="img6.jpeg">
+    <img src="img7.jpeg">
+    <img src="img8.jpeg">
+    <img src="img9.jpeg">
+    <img src="img10.jpeg">
+  </div>
+</div>
+
+  </div>
+  
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
