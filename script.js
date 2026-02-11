@@ -65,9 +65,8 @@ yesBtn.addEventListener("click", () => {
 
     // 🎵 Music switch
     fadeOutIntroAndPlayLove();
-
-
     startTypewriter();
+    document.getElementById("afterProposalOptions").classList.remove("hidden");
     // startCounter();
   }, 800);
 });
@@ -336,6 +335,144 @@ function messWithNoButton() {
 /* Hover effect */
 noBtn.addEventListener("mouseenter", messWithNoButton);
 noBtn.addEventListener("click", messWithNoButton);
+
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function activateContract(isForever) {
+  const status = document.getElementById("contractStatus");
+  const actions = document.querySelector(".contract-actions");
+
+  // 🎉 Confetti burst
+  popConfetti("left");
+  popConfetti("right");
+
+  // 💕 Floating hearts boost
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "0";
+    heart.style.fontSize = "26px";
+    document.body.appendChild(heart);
+
+    heart.animate(
+      [{ transform: "translateY(0)" }, { transform: "translateY(-90vh)" }],
+      { duration: 4500 }
+    );
+
+    setTimeout(() => heart.remove(), 4500);
+  }
+
+  // 📝 Remove the buttons completely
+  actions.remove();
+
+  // ✨ Show updated activation message
+  status.classList.remove("hidden");
+  status.innerHTML = isForever
+    ? "YAYYY!!! ♾️ Forever Contract Activated 💖"
+    : "YAYYY!!! Contract Activated 💖";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const playBtn = document.getElementById("playPromise");
+  const promiseAudio = document.getElementById("promiseAudio");
+
+  if (playBtn && promiseAudio) {
+    playBtn.addEventListener("click", () => {
+      promiseAudio.play()
+        .then(() => {
+          playBtn.textContent = "💖 Playing...";
+          playBtn.disabled = true;
+        })
+        .catch(error => {
+          console.log("Playback error:", error);
+        });
+    });
+  }
+
+});
+
+
+
+promiseAudio.addEventListener("ended", () => {
+  playBtn.textContent = "Replay My Promise 💞";
+  playBtn.disabled = false;
+});
+
+const afterPromise = document.getElementById("afterPromise");
+
+promiseAudio.addEventListener("ended", () => {
+  afterPromise.classList.remove("hidden");
+});
+
+function fadeOut(audio, duration = 800) {
+  let volume = audio.volume;
+  const step = volume / (duration / 50);
+
+  const fade = setInterval(() => {
+    volume -= step;
+    if (volume <= 0) {
+      volume = 0;
+      audio.pause();
+      clearInterval(fade);
+    }
+    audio.volume = volume;
+  }, 50);
+}
+
+function fadeIn(audio, duration = 800) {
+  audio.volume = 0;
+  audio.play();
+  let volume = 0;
+  const step = 1 / (duration / 50);
+
+  const fade = setInterval(() => {
+    volume += step;
+    if (volume >= 1) {
+      volume = 1;
+      clearInterval(fade);
+    }
+    audio.volume = volume;
+  }, 50);
+}
+
+const bgMusic = document.getElementById("loveMusic"); // music.mp3
+const promiseAudio = document.getElementById("promiseAudio");
+const closePromise = document.getElementById("closePromise");
+
+function openPromiseModal() {
+  document.getElementById("promiseModal").classList.remove("hidden");
+
+  // Fade out background music
+  fadeOut(bgMusic);
+
+  // Start promise audio
+  promiseAudio.volume = 1;
+  promiseAudio.play();
+}
+
+closePromise.addEventListener("click", () => {
+
+  document.getElementById("promiseModal").classList.add("hidden");
+
+  // Stop promise audio
+  promiseAudio.pause();
+  promiseAudio.currentTime = 0;
+
+  // Fade background music back in
+  fadeIn(bgMusic);
+});
+
+
+
 
 
 

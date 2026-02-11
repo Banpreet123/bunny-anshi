@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #020024, #000);
+  color: white;
+}
+
+/* 🌌 Stars */
+.stars::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
+  animation: moveStars 100s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
+}
+
+/* CENTER */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 2;
+  position: relative;
+}
+
+.box {
+  background: rgba(255,255,255,0.12);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  backdrop-filter: blur(12px);
+}
+
+/* ❤️ Heartbeat */
+.heartbeat {
+  animation: heartbeat 2s infinite;
+}
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* IMAGES */
+.image-column {
+  position: absolute;
+  top: 0;
+  width: 160px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: scroll 20s linear infinite;
+}
+.left { left: 20px; }
+.right { right: 20px; }
+
+.image-column img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #444;
+  color: #ff9aa2;
+}
+
+/* TEXT */
+.hidden { display: none; }
+
+#funnyText {
+  margin-top: 10px;
+  color: #ffb3c1;
+}

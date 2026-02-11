@@ -28,7 +28,7 @@
 <div class="container">
   <h1>
   <span title="aka Dazzling Gill ✨">Anshi</span> Srivastava ❤️
-  </h1>
+</h1>
   <h4 class="subtitle3">Starting from a message till FOREVER♾️❤️.</h4>
 
   <div id="introText">
@@ -78,6 +78,20 @@
                 Bunny 🐰🐰
             </p>
         </div>
+        <div id="afterProposalOptions" class="hidden options">
+  <button class="option-btn" onclick="openModal('contractModal')">
+    ❤️ Sign Our Love Contract
+  </button>
+
+  <button class="option-btn" onclick="openModal('promiseModal')">
+    🎧 Hear My Promise
+  </button>
+
+  <button class="option-btn" onclick="openModal('capsuleModal')">
+    🔐 Open Your Promise Capsules
+  </button>
+</div>
+
     </div>
 
 
@@ -122,5 +136,224 @@
 </div>
 
 <script src="script.js"></script>
+<div id="contractModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('contractModal')">&times;</span>
+
+    <h2 class="contract-title">💍 Lifetime Partnership Agreement</h2>
+<p class="contract-subtitle">Dil Se, Sirf Tumhare Naam</p>
+<div class="contract-divider"></div>
+
+<p style="text-align:center;">
+Effective from: Promise Day 💌<br>
+Between: Anshi Srivastava & Banpreet (Bunny)
+</p>
+
+<div class="clause">
+  <div class="clause-title">Clause 1: Communication</div>
+  We promise to talk things through — gently, honestly, and openly.
+  No silent wars. No ego battles.
+  <div class="hindi-line">
+    “रिश्ते बातों से बनते हैं, चुप्पियों से नहीं।”
+  </div>
+</div>
+
+<div class="clause">
+  <div class="clause-title">Clause 2: Respect</div>
+  Even in anger, we protect each other’s dignity.
+  Disagreements are allowed. Disrespect is not.
+  <div class="hindi-line">
+    “गुस्सा वक़्त का होता है, पर शब्द उम्र भर चुभते हैं।”
+  </div>
+</div>
+
+<div class="clause">
+  <div class="clause-title">Clause 3: Choosing Each Other</div>
+  On easy days. On difficult days.
+  We choose “us” — every single time.
+  <div class="hindi-line">
+    “मोहब्बत इत्तेफ़ाक नहीं, हर रोज़ लिया गया एक फ़ैसला है।”
+  </div>
+</div>
+
+<div class="clause">
+  <div class="clause-title">Clause 4: Public Loyalty</div>
+  We protect each other in front of the world.
+  If the world stands against us, we stand closer.
+  <div class="hindi-line">
+    “दुनिया से लड़ लेंगे, पर तुम्हें कभी अकेला नहीं छोड़ेंगे।”
+  </div>
+</div>
+
+<div class="clause">
+  <div class="clause-title">Clause 5: Growing Together</div>
+  We grow as individuals,
+  but we never grow apart intentionally.
+</div>
+
+<div class="clause">
+  <div class="clause-title">Mandatory Romance Clause 💕</div>
+  • Random hugs (non-negotiable)<br>
+  • Late-night talks (compulsory)<br>
+  • Weekly reminder: “I’m proud of you.”<br>
+  • Unlimited forehead kisses
+</div>
+
+<div class="contract-divider"></div>
+
+<p style="text-align:center; font-weight:600;">
+<br>Anshi, my love, I don’t promise perfection.<br>
+but yes, I promise effort. Every single time.
+</p>
+
+<p style="text-align:center; margin-top:20px;">
+Signed with love,<br>
+<strong>Banpreet ❤️</strong><br>
+(Jo har din aapko apni marzi se, poore dil se choose karta hai yr lovee)
+</p>
+
+  </div>
+  <div class="contract-actions">
+  <button class="contract-btn accept" onclick="activateContract(false)">
+    I Accept ❤️
+  </button>
+
+  <button class="contract-btn forever" onclick="activateContract(true)">
+    I Accept Forever ♾️
+  </button>
+</div>
+
+<p id="contractStatus" class="contract-status hidden"></p>
+
+
+</div>
+<div id="promiseModal" class="modal">
+  <span class="close" onclick="closeModal('promiseModal')">&times;</span>
+  <div class="modal-content">
+    <div class="promise-container">
+
+  <h2 class="promise-title">🎧 A Promise From My Heart</h2>
+
+  <p class="promise-intro">
+    Before you press play…  
+    Just know… every word in this recording  
+    was spoken with my whole heart.  
+    No script. No filter.  
+    Just me. For you.
+  </p>
+
+  <div class="voice-card">
+    <div class="pulse-ring"></div>
+
+    <button id="playPromise" class="play-btn">
+      ▶ Play My Promise
+    </button>
+
+    <audio id="promiseAudio" preload="auto">
+  <source src="promise.m4a" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
+
+
+        <p id="afterPromise" class="hidden love-line">
+  If you made it till the end…  
+  thank you for listening to my heart.  
+  I mean every word. Always.
+</p>
+
+    <p class="promise-note">
+      Close your eyes while listening…  
+      and imagine I’m right there beside you.
+    </p>
+
+
+
+  </div>
+
+</div>
+
+  </div>
+</div>
+<div id="capsuleModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('capsuleModal')">&times;</span>
+    <div class="capsules-container">
+
+  <div class="capsule-card">
+    <div class="capsule-inner">
+      <div class="capsule-front">Open when you’re sad 💙</div>
+      <div class="capsule-back">
+        My love…  
+        Even on your darkest days,  
+        you are still the brightest thing in my life.  
+        If I could, I’d sit beside you, hold your face,  
+        and remind you how deeply you are loved.  
+        You never have to carry sadness alone.  
+        I am yours — always.
+      </div>
+    </div>
+  </div>
+
+  <div class="capsule-card">
+    <div class="capsule-inner">
+      <div class="capsule-front">Open when we fight 🤍</div>
+      <div class="capsule-back">
+        Even when we argue…  
+        even when emotions rise…  
+        I still choose you.  
+        My ego is small.  
+        Our love is big.  
+        We are never against each other —  
+        it’s always us against the problem.
+      </div>
+    </div>
+  </div>
+
+  <div class="capsule-card">
+    <div class="capsule-inner">
+      <div class="capsule-front">Open when you miss me 🌙</div>
+      <div class="capsule-back">
+        If you’re missing me right now,  
+        close your eyes for 5 seconds.  
+        That warmth you feel?  
+        That’s me thinking about you.  
+        Distance can’t reduce what I feel.  
+        My heart stays wrapped around yours.
+      </div>
+    </div>
+  </div>
+
+  <div class="capsule-card">
+    <div class="capsule-inner">
+      <div class="capsule-front">Open when you doubt yourself 🌤</div>
+      <div class="capsule-back">
+        You are stronger than your fears.  
+        Braver than your overthinking.  
+        Smarter than your doubts.  
+        And more beautiful than you realize.  
+        I see you clearly —  
+        and I am so proud of you.
+      </div>
+    </div>
+  </div>
+
+  <div class="capsule-card">
+    <div class="capsule-inner">
+      <div class="capsule-front">Open when you’re happy ✨</div>
+      <div class="capsule-back">
+        Your happiness is my favorite sound.  
+        Your smile is my favorite view.  
+        When you’re happy,  
+        I silently thank God for bringing you into my life.  
+        Stay glowing, my sunshine.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</div>
+
 </body>
 </html>
